@@ -7,12 +7,12 @@
             [uncomplicate.neanderthal.vect-math :as ndvm]))
 
 (defn days->weeks [dates]
-  (let [last-day-of-week (.getValue (.getDayOfWeek (last dates)))
+  (let [last-day-of-week (.getValue (.getDayOfWeek ^java.time.LocalDate (last dates)))
         partition-day (if (<= 5 last-day-of-week) 1 last-day-of-week)]
     (map last
          (map #(apply concat %)
               (partition-all 2
-                             (partition-by #(<= (.getValue (.getDayOfWeek %)) partition-day)
+                             (partition-by #(<= (.getValue (.getDayOfWeek ^java.time.LocalDate %)) partition-day)
                                            dates))))))
 
 (defn days->months
