@@ -7,12 +7,14 @@
                  [techascent/tech.ml.dataset "8.024"]
                  [org.uncomplicate/neanderthal-base "0.66.1"]
                  [org.uncomplicate/neanderthal-mkl "0.66.1"]
-                 ~(if (.exists (java.io.File. "/mnt/c"))    ;we are on WSL
-                    '[org.bytedeco/mkl "2026.1-1.5.14" :classifier "linux-x86_64-redist"]
-                    '[org.bytedeco/mkl "2026.1-1.5.14" :classifier "windows-x86_64-redist"])
-                 ~(if (.exists (java.io.File. "/mnt/c"))     ;we are on WSL
-                    '[org.bytedeco/openblas "0.3.34-1.5.14" :classifier "linux-x86_64"]
-                    '[org.bytedeco/openblas "0.3.34-1.5.14" :classifier "windows-x86_64"])]
+                 ;A reader-conditional here only picks one OS at `lein install`/`deploy` time and
+                 ;bakes that choice into the published (static) pom, breaking every consumer on
+                 ;the other OS. List both platforms' full "-redist" packages unconditionally
+                 ;instead - same pattern mkl-platform itself already uses for its plain classifiers.
+                 [org.bytedeco/mkl "2026.1-1.5.14" :classifier "linux-x86_64-redist"]
+                 [org.bytedeco/mkl "2026.1-1.5.14" :classifier "windows-x86_64-redist"]
+                 [org.bytedeco/openblas "0.3.34-1.5.14" :classifier "linux-x86_64"]
+                 [org.bytedeco/openblas "0.3.34-1.5.14" :classifier "windows-x86_64"]]
   :source-paths ["src"]
   :test-paths ["test"]
   :jvm-opts ["--enable-native-access=ALL-UNNAMED"]
