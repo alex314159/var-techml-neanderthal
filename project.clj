@@ -16,4 +16,5 @@
   :source-paths ["src"]
   :test-paths ["test"]
   :jvm-opts ["--enable-native-access=ALL-UNNAMED"]
+  :profiles {:dev {:dependencies [[criterium "0.4.6"]]}}
   :repl-options {:timeout 240000})
