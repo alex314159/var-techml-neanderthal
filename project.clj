@@ -5,14 +5,14 @@
             :url  "https://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.12.5"]
                  [techascent/tech.ml.dataset "8.024"]
-                 [org.uncomplicate/neanderthal-base "0.61.0"]
-                 [org.uncomplicate/neanderthal-mkl "0.61.0"]
+                 [org.uncomplicate/neanderthal-base "0.66.1"]
+                 [org.uncomplicate/neanderthal-mkl "0.66.1"]
                  ~(if (.exists (java.io.File. "/mnt/c"))    ;we are on WSL
-                    '[org.bytedeco/mkl "2025.3-1.5.13" :classifier "linux-x86_64-redist"]
-                    '[org.bytedeco/mkl "2025.3-1.5.13" :classifier "windows-x86_64-redist"])
+                    '[org.bytedeco/mkl "2026.1-1.5.14" :classifier "linux-x86_64-redist"]
+                    '[org.bytedeco/mkl "2026.1-1.5.14" :classifier "windows-x86_64-redist"])
                  ~(if (.exists (java.io.File. "/mnt/c"))     ;we are on WSL
-                    '[org.bytedeco/openblas "0.3.31-1.5.13" :classifier "linux-x86_64"]
-                    '[org.bytedeco/openblas "0.3.31-1.5.13" :classifier "windows-x86_64"])]
+                    '[org.bytedeco/openblas "0.3.34-1.5.14" :classifier "linux-x86_64"]
+                    '[org.bytedeco/openblas "0.3.34-1.5.14" :classifier "windows-x86_64"])]
   :source-paths ["src"]
   :test-paths ["test"]
   :jvm-opts ["--enable-native-access=ALL-UNNAMED"]
