@@ -1,4 +1,4 @@
-(defproject net.clojars.alex314159/var-techml-neanderthal "0.1.0-SNAPSHOT"
+(defproject net.clojars.alex314159/var-techml-neanderthal "0.1.0"
   :description "Shared VaR/beta/regression primitives for tech.ml.dataset + Neanderthal workflows."
   :url "https://github.com/alex314159/var-techml-neanderthal"
   :license {:name "MIT"
