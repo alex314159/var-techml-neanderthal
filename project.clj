@@ -1,10 +1,10 @@
-(defproject net.clojars.alex314159/var-techml-neanderthal "0.1.0"
+(defproject net.clojars.alex314159/var-techml-neanderthal "0.1.1"
   :description "Shared VaR/beta/regression primitives for tech.ml.dataset + Neanderthal workflows."
   :url "https://github.com/alex314159/var-techml-neanderthal"
   :license {:name "MIT"
             :url  "https://opensource.org/licenses/MIT"}
-  :dependencies [[org.clojure/clojure "1.12.5"]
-                 [techascent/tech.ml.dataset "8.024"]
+  :dependencies [[org.clojure/clojure "1.12.6"]
+                 [techascent/tech.ml.dataset "8.027"]
                  [org.uncomplicate/neanderthal-base "0.66.1"]
                  [org.uncomplicate/neanderthal-mkl "0.66.1"]
                  ;A reader-conditional here only picks one OS at `lein install`/`deploy` time and
