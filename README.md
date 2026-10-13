@@ -18,7 +18,7 @@ generic technique lives here, the domain wiring (what data feeds it) stays in th
 ## Install
 
 ```clojure
-[net.clojars.alex314159/var-techml-neanderthal "0.1.0"]
+[net.clojars.alex314159/var-techml-neanderthal "0.1.1"]
 ```
 
 ## Namespaces
